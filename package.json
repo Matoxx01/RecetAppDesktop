@@ -1,0 +1,20 @@
+{
+  "name": "recetappdesktop",
+  "version": "1.0.0",
+  "description": "RecetApp Desktop Application",
+  "homepage": "https://github.com/Matoxx01/RecetApp-Desktop#readme",
+  "bugs": {
+    "url": "https://github.com/Matoxx01/RecetApp-Desktop/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matoxx01/RecetApp-Desktop.git"
+  },
+  "license": "ISC",
+  "author": "RecetApps",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
