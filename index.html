@@ -1,33 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecetApp</title>
-</head>
-<body>
 
-    <!-- Titulo -->
-    <h1 class="title" >RecetApp</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
 
-    <!-- Formulario Login -->
-    <form>
+        <title>RecetApp</title>
+    </head>
 
-        <input class="mailInput" type="email" id="email" placeholder="mail" required>
+    <body>
 
-        <input class="passInput" type="password" id="password" placeholder="contraseña" required>
+        <!-- Barra Top -->
 
-        <a>Olvidaste tu contraseña?</a>
+        <div class="title-bar">
+            <div class="titleBar">RecetApp</div>
+            <div class="window-controls">
+                <button class="minimize" id="minimize"></button>
+                <button class="max" id="max"></button>
+                <button class="close" id="close"></button>
+            </div>
+        </div>
 
-        <button type="submit" class="loginButton">Login</button>
-
-        <div class="liner"></div>
-
-        <button class="googleButton"></button>
-
-        <a>Olvidaste tu contraseña?</a>
-
-    </form>
+        <script>
+            document.getElementById('minimize').addEventListener('click', () => {
+                window.electron.minimize();
+            });
     
-</body>
+            document.getElementById('max').addEventListener('click', () => {
+                window.electron.max();
+            });
+    
+            document.getElementById('close').addEventListener('click', () => {
+                window.electron.close();
+            });
+        </script>
+
+        <center>
+
+            <!-- Titulo -->
+            <h1 class="title">RecetApp</h1>
+
+            <!-- Formulario Login -->
+            <form>
+
+                <div class="mail-input">
+                    <input class="text-wrapper" type="email" id="email" placeholder="mail"></input>
+                    <img class="icon" src="icons/at.svg" />
+                </div>
+
+                <div class="pass-input">
+                    <input class="text" type="password" id="password" placeholder="contraseña"></input>
+                    <img class="eye" src="icons/eye.svg" />
+                    <img class="lock" src="icons/lock.svg" />
+                </div>
+                <br />
+                <br />
+
+                <a class="missPass">Olvidaste tu contraseña?</a>
+                <br />
+
+                <button type="submit" class="loginButton">Login</button>
+
+                <div class="divider">
+                    <div class="line"></div>
+                    <span>o</span>
+                    <div class="line"></div>
+                </div>
+
+                <div class="google-button"><img class="icon" src="images/google.png" /></div>
+                <br />
+
+                <a class="missPass">Regístrate Aquí</a>
+
+            </form>
+            
+        </center>
+            
+    </body>
+
 </html>
