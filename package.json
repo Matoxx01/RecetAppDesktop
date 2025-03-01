@@ -16,20 +16,30 @@
   "main": "start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
   },
   "devDependencies": {
-    "electron": "^34.3.0"
+    "electron": "^34.3.0",
+    "electron-builder": "^25.1.8"
   },
   "build": {
+    "appId": "com.recetapp.nombre",
+    "productName": "RecetApp",
+    "directories": {
+      "output": "dist"
+    },
     "win": {
-      "icon": "assets/icon.ico"
+      "icon": "assets/icon.ico",
+      "target": "nsis"
     },
     "mac": {
-      "icon": "assets/icon.png"
+      "icon": "assets/icon.png",
+      "target": "dmg"
     },
     "linux": {
-      "icon": "assets/icon.png"
+      "icon": "assets/icon.png",
+      "target": "AppImage"
     }
   }
 }
