@@ -1,0 +1,22 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ionic-specific files
+.platform/
+plugins/
+www/
+android/
+ios/
+
+# Environment and config files
+.env
+firebase_config.ts
+
+# Compiled files
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
