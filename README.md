@@ -30,4 +30,4 @@ This installs Ionic libraries.
 
 ------------
 
-With all installed, you can open the repository in VS Code or something else and open the terminal again, then you write `$ npm start` to execute the app in your navigator.
+With all installed, you can open the repository in VS Code or something else and open the terminal again, then you write `$ npm run start` to execute the app in your navigator.
