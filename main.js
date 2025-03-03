@@ -1,6 +1,10 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+import { app, BrowserWindow, ipcMain } from 'electron';
+import path from 'path';
 
 let win;
+
+const preloadPath = path.join(app.getAppPath(), 'preload.js');
+const iconPath = path.join(app.getAppPath(), 'assets', 'icon.ico');
 
 function createWindow() {
     win = new BrowserWindow({
@@ -8,23 +12,37 @@ function createWindow() {
         height: 760,
         frame: false,
         webPreferences: {
+            preload: preloadPath,
             nodeIntegration: false,
             contextIsolation: true,
             enableRemoteModule: false,
-            icon: __dirname + "/assets/icon.ico",
-            preload: __dirname + "/preload.js"
+            icon: iconPath,
         }
     });
 
     win.loadFile("index.html");
 
+    win.webContents.on('did-finish-load', () => {
+        console.log('URL actual:', win.webContents.getURL());
+    });
+
+    win.webContents.openDevTools();
+
+    // Redericciones
+
+    ipcMain.on('home', () => {
+        win.loadFile('home/home.html');
+    });    
+
     win.webContents.insertCSS("body { overflow: hidden; }");
 
-    win.setIcon(__dirname + "/assets/icon.ico");
+    win.setIcon(path.join(path.resolve(), "assets/icon.ico"));
 }
 
 app.whenReady().then(() => {
-    app.dock && app.dock.setIcon(__dirname + "/assets/icon.ico");
+    if (app.dock) {
+        app.dock.setIcon(path.join(path.resolve(), "assets/icon.ico"));
+    }
 });
 
 // Eventos para controlar la ventana

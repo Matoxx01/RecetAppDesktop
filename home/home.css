@@ -1,0 +1,68 @@
+body {
+    overflow: hidden;
+    background: #EEE;
+}
+
+/* Barra Top */
+
+.title-bar {
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    user-select: none;
+    -webkit-app-region: drag; /* Hace que la barra sea arrastrable */
+}
+
+.titleBar {
+    font-size: 14px;
+    color: #000;
+    font-family: 'Playlist', sans-serif;
+}
+
+.window-controls {
+    margin-right: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.window-controls .minimize {
+    background: none;
+    background-color: #FFBD44;
+    border: 1px solid #a3a3a3;
+    border-radius: 9999px;
+    cursor: pointer;
+    padding: 5px;
+    -webkit-app-region: no-drag;
+}
+
+.window-controls .max {
+    background: none;
+    background-color: #00CA4E;
+    border: 1px solid #a3a3a3;
+    border-radius: 9999px;
+    cursor: pointer;
+    padding: 5px;
+    -webkit-app-region: no-drag;
+}
+
+.window-controls .close {
+    background: none;
+    background-color: #FF605C;
+    border: 1px solid #a3a3a3;
+    border-radius: 9999px;
+    cursor: pointer;
+    padding: 5px;
+    -webkit-app-region: no-drag;
+}
+
+/* Fuentes */
+
+@font-face {
+    font-family: 'Playlist';
+    src: url('../fonts/Playlist.ttf') format('truetype');
+}

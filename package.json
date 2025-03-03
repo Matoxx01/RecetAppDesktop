@@ -12,8 +12,8 @@
   },
   "license": "ISC",
   "author": "RecetApps",
-  "type": "commonjs",
-  "main": "start.js",
+  "type": "module",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",

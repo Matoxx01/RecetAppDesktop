@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
+        <script type="module" src="index.js"></script>
 
         <title>RecetApp</title>
     </head>
@@ -22,30 +23,16 @@
             </div>
         </div>
 
-        <script>
-            document.getElementById('minimize').addEventListener('click', () => {
-                window.electron.minimize();
-            });
-    
-            document.getElementById('max').addEventListener('click', () => {
-                window.electron.max();
-            });
-    
-            document.getElementById('close').addEventListener('click', () => {
-                window.electron.close();
-            });
-        </script>
-
         <center>
 
             <!-- Titulo -->
             <h1 class="title">RecetApp</h1>
 
             <!-- Formulario Login -->
-            <form>
+            <form id="login-form">
 
                 <div class="mail-input">
-                    <input class="text-wrapper" type="email" id="email" placeholder="mail"></input>
+                    <input class="text-wrapper" type="email" id="mail" placeholder="mail"></input>
                     <img class="icon" src="icons/at.svg" />
                 </div>
 
@@ -68,12 +55,13 @@
                     <div class="line"></div>
                 </div>
 
-                <div class="google-button"><img class="icon" src="images/google.png" /></div>
+                <div id="google-login" class="google-button"><img class="icon" src="images/google.png" /></div>
                 <br />
 
                 <a class="missPass">Regístrate Aquí</a>
 
             </form>
+            <div id="flash-messages" class="flash-messages"></div>
             
         </center>
             
